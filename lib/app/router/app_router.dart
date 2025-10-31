@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:users_pagination_task/app/features/auth/presentation/login_screen.dart';
 import 'package:users_pagination_task/app/features/user_list/data/models/user_model.dart';
 import 'package:users_pagination_task/app/features/user_list/presentation/screens/user_list_screen.dart';
 import 'package:users_pagination_task/app/features/user_list/presentation/screens/user_details_screen.dart';
@@ -17,6 +18,11 @@ class AppRouter {
             GoRoute(
               path: '/',
               builder: (context, state) => const SplashScreen(),
+            ),
+            GoRoute(
+              path: RouteHelper.loginScreen,
+              name: RouteHelper.loginScreen,
+              builder: (context, state) => LoginScreen(),
             ),
             GoRoute(
               path: RouteHelper.userListScreen,

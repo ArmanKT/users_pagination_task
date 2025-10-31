@@ -5,7 +5,7 @@ import 'package:users_pagination_task/app/features/user_list/presentation/bloc/u
 import 'package:users_pagination_task/app/features/user_list/presentation/bloc/user_list_event.dart';
 import 'package:users_pagination_task/app/features/user_list/presentation/bloc/user_list_state.dart';
 import 'package:users_pagination_task/app/features/user_list/presentation/screens/widgets/search_box_widget.dart';
-import 'widgets/users_listview_widget.dart';
+import 'widgets/users_listView_widget.dart';
 
 class UserListScreen extends StatefulWidget {
   const UserListScreen({super.key});
@@ -65,7 +65,7 @@ class _UserListScreenState extends State<UserListScreen> {
           ),
           // Expanded list
           Expanded(
-            child: UsersListWidget(
+            child: UsersListViewWidget(
               userListBloc: _userListBloc,
               scrollController: _scrollController,
               searchQuery: _searchBoxController.text,

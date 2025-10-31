@@ -1,7 +1,8 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
-import 'package:users_pagination_task/app/core/network/api_interceptor.dart';
+import 'package:users_pagination_task/app/core/network/interceptor/api_interceptor.dart';
+import 'package:users_pagination_task/app/core/network/interceptor/unauthorized_interceptor.dart';
 import 'package:users_pagination_task/app/core/shared/data/model/api_response_model.dart';
 import 'package:users_pagination_task/app/core/utils/utils_exporter.dart';
 
@@ -19,7 +20,7 @@ class ApiClient {
     );
 
     // Add interceptors
-    _dio.interceptors.add(ApiInterceptor());
+    _dio.interceptors.addAll([ApiInterceptor(), UnauthorizedInterceptor()]);
   }
 
   /// GET method

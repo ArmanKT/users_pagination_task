@@ -11,8 +11,8 @@ import '../../../../../router/route_helper.dart';
 import '../../bloc/user_list_bloc.dart';
 import '../../bloc/user_list_state.dart';
 
-class UsersListWidget extends StatelessWidget {
-  const UsersListWidget({
+class UsersListViewWidget extends StatelessWidget {
+  const UsersListViewWidget({
     super.key,
     required UserListBloc userListBloc,
     required ScrollController scrollController,

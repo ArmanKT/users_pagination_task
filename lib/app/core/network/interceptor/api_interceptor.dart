@@ -11,15 +11,15 @@ class ApiInterceptor extends Interceptor {
 
   @override
   void onResponse(Response response, ResponseInterceptorHandler handler) {
-    printI('Response: ${response.statusCode} ${response.requestOptions.uri}');
+    printI('Response: ${response.statusCode}');
     printI('Response Data: ${response.data}');
     handler.next(response);
   }
 
   @override
   void onError(DioException err, ErrorInterceptorHandler handler) {
-    printE('Error: ${err.message}');
     if (err.response != null) {
+      printE('Error: ${err.response?.statusCode} ${err.message}');
       printE('Response data: ${err.response?.data}');
     }
     handler.next(err);
