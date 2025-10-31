@@ -17,7 +17,7 @@ A Flutter application that demonstrates advanced concepts including pagination, 
 
 ## 📥 Download APK
 
-[![Download APK](https://img.shields.io/badge/Download-APK-blue?style=for-the-badge&logo=android)](demo/apk/app-release.apk)
+[![Download APK](https://img.shields.io/badge/Download-APK-blue?style=for-the-badge&logo=android)](https://github.com/ArmanKT/users_pagination_task/raw/refs/heads/main/demo/apk/app-release.apk)
 
 ---
 
