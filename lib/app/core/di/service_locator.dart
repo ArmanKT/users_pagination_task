@@ -2,6 +2,7 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:get_it/get_it.dart';
 import 'package:users_pagination_task/app/core/network/api_client.dart';
 import 'package:users_pagination_task/app/core/service/hive_service.dart';
+import 'package:users_pagination_task/app/core/service/network_service.dart';
 import 'package:users_pagination_task/app/features/user_list/data/datasources/users_list_local_data_source.dart';
 import 'package:users_pagination_task/app/features/user_list/data/datasources/users_list_remote_data_source.dart';
 import 'package:users_pagination_task/app/features/user_list/data/repositories/user_repository_impl.dart';
@@ -21,6 +22,9 @@ class ServiceLocator {
     serviceLocator.registerSingleton<HiveService>(hiveService);
     // Connectivity
     serviceLocator.registerLazySingleton<Connectivity>(() => Connectivity());
+    // Network Service (inject connectivity)
+    serviceLocator.registerLazySingleton<NetworkService>(() => NetworkService(connectivity: serviceLocator()));
+
     //Api Client
     serviceLocator.registerLazySingleton<ApiClient>(() => ApiClient());
     // Splash Cubit

@@ -5,6 +5,7 @@ import 'package:users_pagination_task/app/features/user_list/presentation/bloc/u
 import 'package:users_pagination_task/app/features/user_list/presentation/bloc/user_list_event.dart';
 import 'package:users_pagination_task/app/features/user_list/presentation/bloc/user_list_state.dart';
 import 'package:users_pagination_task/app/features/user_list/presentation/screens/widgets/search_box_widget.dart';
+import 'widgets/network_status_indicator.dart';
 import 'widgets/users_listView_widget.dart';
 
 class UserListScreen extends StatefulWidget {
@@ -56,7 +57,14 @@ class _UserListScreenState extends State<UserListScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(AppStrings.appTitle)),
+      appBar: AppBar(
+        title: Text(AppStrings.appTitle),
+        centerTitle: false,
+        actions: [
+          NetworkStatusIndicator(), //Network indicator
+          SizedBox(width: Dimensions.paddingSmall)
+        ],
+      ),
       body: Column(
         children: [
           // Search Bar
